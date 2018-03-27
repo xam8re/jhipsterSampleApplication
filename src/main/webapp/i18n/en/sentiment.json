@@ -1,0 +1,10 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "Sentiment" : {
+            "null": "",
+            "POSITIVO": "POSITIVO",
+            "NEGATIVO": "NEGATIVO",
+            "NEUTRO": "NEUTRO"
+        }
+    }
+}

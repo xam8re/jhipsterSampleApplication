@@ -1,0 +1,52 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myJobDataLabel" jhiTranslate="jhipsterSampleApplicationApp.jobData.home.createOrEditLabel">Create or edit a Job Data</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!jobData.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="jobData.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.jobData.nRetweet" for="field_nRetweet">N Retweet</label>
+            <input type="number" class="form-control" name="nRetweet" id="field_nRetweet"
+                [(ngModel)]="jobData.nRetweet" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.jobData.nLike" for="field_nLike">N Like</label>
+            <input type="number" class="form-control" name="nLike" id="field_nLike"
+                [(ngModel)]="jobData.nLike" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.jobData.nFollower" for="field_nFollower">N Follower</label>
+            <input type="number" class="form-control" name="nFollower" id="field_nFollower"
+                [(ngModel)]="jobData.nFollower" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.jobData.nTweetUser" for="field_nTweetUser">N Tweet User</label>
+            <input type="number" class="form-control" name="nTweetUser" id="field_nTweetUser"
+                [(ngModel)]="jobData.nTweetUser" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.jobData.tweet" for="field_tweet">Tweet</label>
+            <select class="form-control" id="field_tweet" name="tweet" [(ngModel)]="jobData.tweet" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tweetOption.id === jobData.tweet?.id ? jobData.tweet : tweetOption" *ngFor="let tweetOption of tweets; trackBy: trackTweetById">{{tweetOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
