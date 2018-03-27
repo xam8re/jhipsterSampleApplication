@@ -1,0 +1,91 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTwitterKeyLabel" jhiTranslate="jhipsterSampleApplicationApp.twitterKey.home.createOrEditLabel">Create or edit a Twitter Key</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!twitterKey.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="twitterKey.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.twitterKey.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="twitterKey.name" required/>
+            <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.twitterKey.consumerKey" for="field_consumerKey">Consumer Key</label>
+            <input type="text" class="form-control" name="consumerKey" id="field_consumerKey"
+                [(ngModel)]="twitterKey.consumerKey" required/>
+            <div [hidden]="!(editForm.controls.consumerKey?.dirty && editForm.controls.consumerKey?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.consumerKey?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.twitterKey.consumerSecret" for="field_consumerSecret">Consumer Secret</label>
+            <input type="text" class="form-control" name="consumerSecret" id="field_consumerSecret"
+                [(ngModel)]="twitterKey.consumerSecret" required/>
+            <div [hidden]="!(editForm.controls.consumerSecret?.dirty && editForm.controls.consumerSecret?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.consumerSecret?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.twitterKey.accessToken" for="field_accessToken">Access Token</label>
+            <input type="text" class="form-control" name="accessToken" id="field_accessToken"
+                [(ngModel)]="twitterKey.accessToken" required/>
+            <div [hidden]="!(editForm.controls.accessToken?.dirty && editForm.controls.accessToken?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.accessToken?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.twitterKey.accessTokenSecret" for="field_accessTokenSecret">Access Token Secret</label>
+            <input type="text" class="form-control" name="accessTokenSecret" id="field_accessTokenSecret"
+                [(ngModel)]="twitterKey.accessTokenSecret" required/>
+            <div [hidden]="!(editForm.controls.accessTokenSecret?.dirty && editForm.controls.accessTokenSecret?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.accessTokenSecret?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.twitterKey.active" for="field_active">Active</label>
+            <input type="checkbox" class="form-control" name="active" id="field_active"
+                [(ngModel)]="twitterKey.active" />
+            <div [hidden]="!(editForm.controls.active?.dirty && editForm.controls.active?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.active?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

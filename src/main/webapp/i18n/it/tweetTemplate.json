@@ -1,0 +1,25 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "tweetTemplate" : {
+            "home": {
+                "title": "TweetTemplates",
+                "createLabel": "Genera un nuovo Tweet Template",
+                "createOrEditLabel": "Genera o modifica un Tweet Template",
+                "search": "Cerca Tweet Template"
+            },
+            "created": "&Egrave; stato generato un nuovo Tweet Template con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Tweet Template identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Tweet Template con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Tweet Template {{ id }}?"
+            },
+            "detail": {
+                "title": "Tweet Template"
+            },
+            "pattern": "Pattern",
+            "descrizione": "Descrizione",
+            "twitterKey": "Twitter Key"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "tweetCategory" : {
+            "home": {
+                "title": "Tweet Categories",
+                "createLabel": "Create a new Tweet Category",
+                "createOrEditLabel": "Create or edit a Tweet Category",
+                "search": "Search for Tweet Category"
+            },
+            "created": "A new Tweet Category is created with identifier {{ param }}",
+            "updated": "A Tweet Category is updated with identifier {{ param }}",
+            "deleted": "A Tweet Category is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tweet Category {{ id }}?"
+            },
+            "detail": {
+                "title": "Tweet Category"
+            },
+            "categoria": "Categoria"
+        }
+    }
+}

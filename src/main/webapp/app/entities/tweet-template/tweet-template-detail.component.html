@@ -1,0 +1,36 @@
+
+<div *ngIf="tweetTemplate">
+    <h2><span jhiTranslate="jhipsterSampleApplicationApp.tweetTemplate.detail.title">Tweet Template</span> {{tweetTemplate.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweetTemplate.pattern">Pattern</span></dt>
+        <dd>
+            <span>{{tweetTemplate.pattern}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweetTemplate.descrizione">Descrizione</span></dt>
+        <dd>
+            <span>{{tweetTemplate.descrizione}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweetTemplate.twitterKey">Twitter Key</span></dt>
+        <dd>
+            <div *ngIf="tweetTemplate.twitterKey">
+                <a [routerLink]="['/twitter-key', tweetTemplate.twitterKey?.id]">{{tweetTemplate.twitterKey?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tweet-template/'+ tweetTemplate.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tweet",
+            "otherEntityName": "tweet",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nRetweet",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nLike",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nFollower",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nTweetUser",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180327133245",
+    "entityTableName": "job_data",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

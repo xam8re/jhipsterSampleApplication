@@ -1,0 +1,24 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "hodKey" : {
+            "home": {
+                "title": "HodKeys",
+                "createLabel": "Genera un nuovo Hod Key",
+                "createOrEditLabel": "Genera o modifica un Hod Key",
+                "search": "Cerca Hod Key"
+            },
+            "created": "&Egrave; stato generato un nuovo Hod Key con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Hod Key identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Hod Key con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Hod Key {{ id }}?"
+            },
+            "detail": {
+                "title": "Hod Key"
+            },
+            "name": "Name",
+            "hodkey": "Hodkey"
+        }
+    }
+}
