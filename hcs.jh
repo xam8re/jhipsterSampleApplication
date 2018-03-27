@@ -1,0 +1,69 @@
+enum Sentiment {
+    POSITIVO, NEGATIVO, NEUTRO
+} 
+
+enum RunStatus {
+	IDLE, RUNNING
+}
+
+entity Tweet {
+	tweetId	String required,
+    tweetData Instant,
+    tweetGeo String,
+    content String required,
+    userid String required,
+    sentiment Sentiment
+}
+entity TweetCategory{
+   categoria String required
+}
+
+relationship ManyToOne {
+	Tweet {categoria } to TweetCategory ,
+    Tweet {tenplate } to TweetTemplate ,
+    Tweet {job} to Job
+    
+}
+
+entity Job {
+	runData Instant,
+    status RunStatus
+}
+
+entity JobData{
+    nRetweet Integer,
+    nLike Integer,
+    nFollower Integer,
+    nTweetUser Integer
+}
+
+relationship ManyToOne {
+	JobData {tweet } to Tweet 
+}
+
+entity TweetTemplate{
+    pattern String required,
+    descrizione String
+}
+
+relationship ManyToOne {
+	TweetTemplate {twitterKey } to TwitterKey 
+}
+
+entity TwitterKey {
+    name String required ,
+
+    consumerKey String required,
+    consumerSecret String required,
+    accessToken String required,
+    accessTokenSecret String required,     
+    active Boolean required
+}
+
+entity HodKey{
+    name String required,
+    hodkey String required
+}
+
+paginate * with pagination
+service all with serviceImpl
