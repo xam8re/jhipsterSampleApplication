@@ -1,0 +1,31 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "tweet" : {
+            "home": {
+                "title": "Tweets",
+                "createLabel": "Create a new Tweet",
+                "createOrEditLabel": "Create or edit a Tweet",
+                "search": "Search for Tweet"
+            },
+            "created": "A new Tweet is created with identifier {{ param }}",
+            "updated": "A Tweet is updated with identifier {{ param }}",
+            "deleted": "A Tweet is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tweet {{ id }}?"
+            },
+            "detail": {
+                "title": "Tweet"
+            },
+            "tweetId": "Tweet Id",
+            "tweetData": "Tweet Data",
+            "tweetGeo": "Tweet Geo",
+            "content": "Content",
+            "userid": "Userid",
+            "sentiment": "Sentiment",
+            "categoria": "Categoria",
+            "tenplate": "Tenplate",
+            "job": "Job"
+        }
+    }
+}

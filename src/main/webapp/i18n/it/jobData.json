@@ -1,0 +1,27 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "jobData" : {
+            "home": {
+                "title": "JobData",
+                "createLabel": "Genera un nuovo Job Data",
+                "createOrEditLabel": "Genera o modifica un Job Data",
+                "search": "Cerca Job Data"
+            },
+            "created": "&Egrave; stato generato un nuovo Job Data con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Job Data identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Job Data con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Job Data {{ id }}?"
+            },
+            "detail": {
+                "title": "Job Data"
+            },
+            "nRetweet": "N Retweet",
+            "nLike": "N Like",
+            "nFollower": "N Follower",
+            "nTweetUser": "N Tweet User",
+            "tweet": "Tweet"
+        }
+    }
+}

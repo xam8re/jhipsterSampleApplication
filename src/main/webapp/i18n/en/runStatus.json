@@ -1,0 +1,9 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "RunStatus" : {
+            "null": "",
+            "IDLE": "IDLE",
+            "RUNNING": "RUNNING"
+        }
+    }
+}

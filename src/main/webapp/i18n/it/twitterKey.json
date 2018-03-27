@@ -1,0 +1,28 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "twitterKey" : {
+            "home": {
+                "title": "TwitterKeys",
+                "createLabel": "Genera un nuovo Twitter Key",
+                "createOrEditLabel": "Genera o modifica un Twitter Key",
+                "search": "Cerca Twitter Key"
+            },
+            "created": "&Egrave; stato generato un nuovo Twitter Key con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Twitter Key identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Twitter Key con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Twitter Key {{ id }}?"
+            },
+            "detail": {
+                "title": "Twitter Key"
+            },
+            "name": "Name",
+            "consumerKey": "Consumer Key",
+            "consumerSecret": "Consumer Secret",
+            "accessToken": "Access Token",
+            "accessTokenSecret": "Access Token Secret",
+            "active": "Active"
+        }
+    }
+}

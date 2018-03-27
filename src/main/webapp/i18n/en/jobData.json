@@ -1,0 +1,27 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "jobData" : {
+            "home": {
+                "title": "Job Data",
+                "createLabel": "Create a new Job Data",
+                "createOrEditLabel": "Create or edit a Job Data",
+                "search": "Search for Job Data"
+            },
+            "created": "A new Job Data is created with identifier {{ param }}",
+            "updated": "A Job Data is updated with identifier {{ param }}",
+            "deleted": "A Job Data is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Job Data {{ id }}?"
+            },
+            "detail": {
+                "title": "Job Data"
+            },
+            "nRetweet": "N Retweet",
+            "nLike": "N Like",
+            "nFollower": "N Follower",
+            "nTweetUser": "N Tweet User",
+            "tweet": "Tweet"
+        }
+    }
+}

@@ -7,6 +7,13 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entità",
+                "tweet": "Tweet",
+                "tweetCategory": "Tweet Category",
+                "job": "Job",
+                "jobData": "Job Data",
+                "tweetTemplate": "Tweet Template",
+                "twitterKey": "Twitter Key",
+                "hodKey": "Hod Key",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
