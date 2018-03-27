@@ -1,0 +1,64 @@
+
+<div *ngIf="tweet">
+    <h2><span jhiTranslate="jhipsterSampleApplicationApp.tweet.detail.title">Tweet</span> {{tweet.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.tweetId">Tweet Id</span></dt>
+        <dd>
+            <span>{{tweet.tweetId}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.tweetData">Tweet Data</span></dt>
+        <dd>
+            <span>{{tweet.tweetData | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.tweetGeo">Tweet Geo</span></dt>
+        <dd>
+            <span>{{tweet.tweetGeo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.content">Content</span></dt>
+        <dd>
+            <span>{{tweet.content}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.userid">Userid</span></dt>
+        <dd>
+            <span>{{tweet.userid}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.sentiment">Sentiment</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jhipsterSampleApplicationApp.Sentiment.' + tweet.sentiment}}">{{tweet.sentiment}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.categoria">Categoria</span></dt>
+        <dd>
+            <div *ngIf="tweet.categoria">
+                <a [routerLink]="['/tweet-category', tweet.categoria?.id]">{{tweet.categoria?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.tenplate">Tenplate</span></dt>
+        <dd>
+            <div *ngIf="tweet.tenplate">
+                <a [routerLink]="['/tweet-template', tweet.tenplate?.id]">{{tweet.tenplate?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.tweet.job">Job</span></dt>
+        <dd>
+            <div *ngIf="tweet.job">
+                <a [routerLink]="['/job', tweet.job?.id]">{{tweet.job?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tweet/'+ tweet.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

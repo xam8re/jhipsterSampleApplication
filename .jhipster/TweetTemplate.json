@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "twitterKey",
+            "otherEntityName": "twitterKey",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "pattern",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descrizione",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180327133246",
+    "entityTableName": "tweet_template",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,99 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTweetLabel" jhiTranslate="jhipsterSampleApplicationApp.tweet.home.createOrEditLabel">Create or edit a Tweet</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tweet.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tweet.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.tweetId" for="field_tweetId">Tweet Id</label>
+            <input type="text" class="form-control" name="tweetId" id="field_tweetId"
+                [(ngModel)]="tweet.tweetId" required/>
+            <div [hidden]="!(editForm.controls.tweetId?.dirty && editForm.controls.tweetId?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.tweetId?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.tweetData" for="field_tweetData">Tweet Data</label>
+            <div class="d-flex">
+                <input id="field_tweetData" type="datetime-local" class="form-control" name="tweetData" [(ngModel)]="tweet.tweetData"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.tweetGeo" for="field_tweetGeo">Tweet Geo</label>
+            <input type="text" class="form-control" name="tweetGeo" id="field_tweetGeo"
+                [(ngModel)]="tweet.tweetGeo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.content" for="field_content">Content</label>
+            <input type="text" class="form-control" name="content" id="field_content"
+                [(ngModel)]="tweet.content" required/>
+            <div [hidden]="!(editForm.controls.content?.dirty && editForm.controls.content?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.content?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.userid" for="field_userid">Userid</label>
+            <input type="text" class="form-control" name="userid" id="field_userid"
+                [(ngModel)]="tweet.userid" required/>
+            <div [hidden]="!(editForm.controls.userid?.dirty && editForm.controls.userid?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.userid?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.sentiment" for="field_sentiment">Sentiment</label>
+            <select class="form-control" name="sentiment" [(ngModel)]="tweet.sentiment" id="field_sentiment" >
+                <option value="POSITIVO">{{'jhipsterSampleApplicationApp.Sentiment.POSITIVO' | translate}}</option>
+                <option value="NEGATIVO">{{'jhipsterSampleApplicationApp.Sentiment.NEGATIVO' | translate}}</option>
+                <option value="NEUTRO">{{'jhipsterSampleApplicationApp.Sentiment.NEUTRO' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.categoria" for="field_categoria">Categoria</label>
+            <select class="form-control" id="field_categoria" name="categoria" [(ngModel)]="tweet.categoria" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tweetCategoryOption.id === tweet.categoria?.id ? tweet.categoria : tweetCategoryOption" *ngFor="let tweetCategoryOption of tweetcategories; trackBy: trackTweetCategoryById">{{tweetCategoryOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.tenplate" for="field_tenplate">Tenplate</label>
+            <select class="form-control" id="field_tenplate" name="tenplate" [(ngModel)]="tweet.tenplate" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tweetTemplateOption.id === tweet.tenplate?.id ? tweet.tenplate : tweetTemplateOption" *ngFor="let tweetTemplateOption of tweettemplates; trackBy: trackTweetTemplateById">{{tweetTemplateOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tweet.job" for="field_job">Job</label>
+            <select class="form-control" id="field_job" name="job" [(ngModel)]="tweet.job" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="jobOption.id === tweet.job?.id ? tweet.job : jobOption" *ngFor="let jobOption of jobs; trackBy: trackJobById">{{jobOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,44 @@
+
+<div *ngIf="jobData">
+    <h2><span jhiTranslate="jhipsterSampleApplicationApp.jobData.detail.title">Job Data</span> {{jobData.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jobData.nRetweet">N Retweet</span></dt>
+        <dd>
+            <span>{{jobData.nRetweet}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jobData.nLike">N Like</span></dt>
+        <dd>
+            <span>{{jobData.nLike}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jobData.nFollower">N Follower</span></dt>
+        <dd>
+            <span>{{jobData.nFollower}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jobData.nTweetUser">N Tweet User</span></dt>
+        <dd>
+            <span>{{jobData.nTweetUser}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jobData.tweet">Tweet</span></dt>
+        <dd>
+            <div *ngIf="jobData.tweet">
+                <a [routerLink]="['/tweet', jobData.tweet?.id]">{{jobData.tweet?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'job-data/'+ jobData.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
