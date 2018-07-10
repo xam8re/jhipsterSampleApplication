@@ -1,0 +1,254 @@
+/**
+* gestiamo i Ruoli in JHipseter
+* assegneremo gli utenti JHipster 1:1 ai record AMSAUser
+*/
+entity AMSAUser {
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+    company String,
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String,
+    country String,
+    userType AMSAuserType
+}
+
+relationship OneToOne {
+	AMSAUser {jhuser required} to User
+}
+
+/**
+* Ripeto i ruoli per utente per semplificare 
+* le query e la gestione. 
+*/
+enum AMSAuserType {
+ CUSTOMER,
+ ADMIN,
+ SUPPLIER,
+ REGISTERED
+}
+
+entity Document {
+	path String required,
+	type String,
+    ext String
+}
+
+entity Material {
+	code String,
+	name String,
+    description String
+    //image Document
+}
+
+relationship OneToOne {
+	Material{image} to Document	
+}
+
+enum UnitSystem {
+	MM,
+    INCH
+}
+
+entity Dimension {
+	us UnitSystem,
+	x Double,
+    y Double,
+    z Double
+}
+
+/**
+* Service Class is 
+* - Nuovo Prodotto
+* - Piccola Serie
+* - Parti di Ricambio
+**/
+entity ServiceRequestClass {
+	name String,
+    showOriginalCAD Boolean,
+    showDesignSpaceCAD Boolean,
+    showNonDesignSpaceCAD Boolean,
+    showTechSpec Boolean,
+    showMaterial Boolean,
+    showDimensions Boolean,
+    showPhoto Boolean    
+}
+
+/**
+* Descrizione del servizio da parte dell'utente
+**/
+entity ServiceRequest {
+	name String,
+    period Instant
+}
+
+relationship ManyToOne {
+	ServiceRequest{material} to Material,
+	ServiceRequest{volume} to Dimension,
+    ServiceRequest{srvclass} to ServiceRequestClass
+}
+
+relationship ManyToMany {
+	ServiceRequest{document} to Document	
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity TaskRequest {
+	title String,
+	description String,
+    period Instant    
+}
+relationship OneToMany {
+	ServiceRequest{task} to TaskRequest
+}
+/**
+  * Offer is created by ADMIN
+  * Task Offer will be pending for SUPPLIER
+  * i.e. has no prize.
+
+  * Need to keep track of Service Offer completion:
+  * unless all Task Request have a corresponding
+  * task offer as APPROVED, Service Offer could not be submitted
+  * hence will result as PENDING. When is eligible to be submitted
+  * it will be marked as COMPLETED
+
+  * Supplier fullfilled the Offer
+  * OR ADMIN Completed the Offer and
+  * submitted to the CUSTOMER
+
+  * Task Offer Submitted by the SUPPLIER
+  * has been approved by ADMIN, i.e. is now part of Service Offer
+  * OR
+  * Service Offer Submitted by ADMIN
+  * has been approved by CUSTOMER
+  */
+enum OfferState {
+
+	PENDING,
+    COMPLETED,
+    SUBMITTED,
+    APPROVED,
+    REJECTED
+}
+
+entity TaskOffer {
+	prize Double,
+    state OfferState,
+    period Instant
+}
+
+entity ServiceOffer {
+	prize Double,
+    state OfferState,
+    period Instant
+}
+
+relationship OneToMany {
+	TaskRequest{offer} to TaskOffer
+}
+relationship ManyToOne {
+	TaskOffer{supplier required} to AMSAUser
+}
+relationship OneToMany {
+	ServiceRequest{offer} to ServiceOffer
+}
+relationship OneToMany {
+	ServiceOffer{chosenoffer} to TaskOffer
+}
+relationship OneToOne {
+	TaskRequest{technology} to Technology,
+    TaskRequest{material} to Material,
+	TaskRequest{volume} to Dimension
+}
+
+entity TechnologyClass {
+	name String required,
+	showAccuracy Boolean,
+    showPortable Boolean,
+    showMaterial Boolean
+}
+
+entity Technology {
+	name String required
+}
+relationship OneToOne {
+	Technology{technologyClass} to TechnologyClass
+}
+entity Manufacturer {
+	name String required
+}
+
+
+entity Resource {
+	accuracy String,
+    /**
+    * equivalente a scanning on site
+    */
+    portable Boolean
+}
+
+relationship OneToMany {
+	Resource{material} to Material
+}
+
+relationship ManyToOne {
+	Resource{machineModel required} to MachineModel,
+	Resource{workVolume} to Dimension,
+    Resource{owner required} to AMSAUser
+}
+
+entity MachineModel {
+	name String required
+}
+relationship OneToMany {
+	MachineModel{technology required} to Technology
+}
+relationship ManyToOne {
+	MachineModel{manufacturer required} to Manufacturer
+}
+
+relationship ManyToOne {
+	ServiceRequest{amsaUser(firstName) required} to AMSAUser,
+    ServiceOffer{amsaUser(firstName) required} to AMSAUser
+}
+
+
+enum OrderState {
+	PENDING,
+    WIP,
+    INTRANSIT,
+    DELIVERED,
+    CANCELLED
+}
+
+entity OrderHistory {
+	state OrderState,
+    date Instant
+}
+
+entity ServiceOrder {
+	state OrderState
+}
+
+entity TaskOrder {
+	state OrderState
+}
+
+relationship OneToMany {
+	ServiceOrder{orderHistory} to OrderHistory,
+	TaskOrder{orderHistory} to OrderHistory
+}
+
+relationship ManyToOne {
+    OrderHistory{by} to AMSAUser
+}
+
+paginate * with pagination
+service * with serviceImpl
+dto * with mapstruct
