@@ -1,0 +1,28 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "taskOffer" : {
+            "home": {
+                "title": "TaskOffers",
+                "createLabel": "Genera un nuovo Task Offer",
+                "createOrEditLabel": "Genera o modifica un Task Offer",
+                "search": "Cerca Task Offer"
+            },
+            "created": "&Egrave; stato generato un nuovo Task Offer con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Task Offer identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Task Offer con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Task Offer {{ id }}?"
+            },
+            "detail": {
+                "title": "Task Offer"
+            },
+            "prize": "Prize",
+            "state": "State",
+            "period": "Period",
+            "taskRequest": "Task Request",
+            "supplier": "Supplier",
+            "serviceOffer": "Service Offer"
+        }
+    }
+}

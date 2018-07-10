@@ -1,0 +1,65 @@
+{
+    "name": "TaskRequest",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "period",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "serviceRequest",
+            "otherEntityName": "serviceRequest",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "technology",
+            "otherEntityName": "technology",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "taskRequest"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "material",
+            "otherEntityName": "material",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "taskRequest"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "volume",
+            "otherEntityName": "dimension",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "taskRequest"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "offer",
+            "otherEntityName": "taskOffer",
+            "otherEntityRelationshipName": "taskRequest"
+        }
+    ],
+    "changelogDate": "20180710124701",
+    "javadoc": "Task entity.\n@author The JHipster team.",
+    "entityTableName": "task_request",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

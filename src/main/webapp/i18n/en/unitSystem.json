@@ -1,0 +1,9 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "UnitSystem" : {
+            "null": "",
+            "MM": "MM",
+            "INCH": "INCH"
+        }
+    }
+}

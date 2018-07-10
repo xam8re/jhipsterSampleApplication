@@ -1,0 +1,31 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "resource" : {
+            "home": {
+                "title": "Resources",
+                "createLabel": "Genera un nuovo Resource",
+                "createOrEditLabel": "Genera o modifica un Resource",
+                "search": "Cerca Resource"
+            },
+            "created": "&Egrave; stato generato un nuovo Resource con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Resource identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Resource con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Resource {{ id }}?"
+            },
+            "detail": {
+                "title": "Resource"
+            },
+            "accuracy": "Accuracy",
+            "portable": "Portable",
+            "material": "Material",
+            "machineModel": "Machine Model",
+            "workVolume": "Work Volume",
+            "owner": "Owner",
+            "help": {
+                "portable": "equivalente a scanning on site"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "AMSAuserType" : {
+            "null": "",
+            "CUSTOMER": "CUSTOMER",
+            "ADMIN": "ADMIN",
+            "SUPPLIER": "SUPPLIER",
+            "REGISTERED": "REGISTERED"
+        }
+    }
+}

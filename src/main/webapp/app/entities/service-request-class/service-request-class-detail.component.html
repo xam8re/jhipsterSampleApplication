@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceRequestClass">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.detail.title">Service Request Class</span> {{serviceRequestClass.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.name">Name</span></dt>
+                <dd>
+                    <span>{{serviceRequestClass.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showOriginalCAD">Show Original CAD</span></dt>
+                <dd>
+                    <span>{{serviceRequestClass.showOriginalCAD}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showDesignSpaceCAD">Show Design Space CAD</span></dt>
+                <dd>
+                    <span>{{serviceRequestClass.showDesignSpaceCAD}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showNonDesignSpaceCAD">Show Non Design Space CAD</span></dt>
+                <dd>
+                    <span>{{serviceRequestClass.showNonDesignSpaceCAD}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showTechSpec">Show Tech Spec</span></dt>
+                <dd>
+                    <span>{{serviceRequestClass.showTechSpec}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showMaterial">Show Material</span></dt>
+                <dd>
+                    <span>{{serviceRequestClass.showMaterial}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showDimensions">Show Dimensions</span></dt>
+                <dd>
+                    <span>{{serviceRequestClass.showDimensions}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showPhoto">Show Photo</span></dt>
+                <dd>
+                    <span>{{serviceRequestClass.showPhoto}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-request-class', serviceRequestClass.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

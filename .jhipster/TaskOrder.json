@@ -1,0 +1,27 @@
+{
+    "name": "TaskOrder",
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "OrderState",
+            "fieldValues": "PENDING,WIP,INTRANSIT,DELIVERED,CANCELLED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "orderHistory",
+            "otherEntityName": "orderHistory",
+            "otherEntityRelationshipName": "taskOrder"
+        }
+    ],
+    "changelogDate": "20180710124711",
+    "entityTableName": "task_order",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

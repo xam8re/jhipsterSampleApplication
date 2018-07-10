@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-order-history-heading" jhiTranslate="jhipsterSampleApplicationApp.orderHistory.home.createOrEditLabel">Create or edit a Order History</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!orderHistory.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="orderHistory.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.orderHistory.state" for="field_state">State</label>
+                    <select class="form-control" name="state" [(ngModel)]="orderHistory.state" id="field_state" >
+                        <option value="PENDING">{{'jhipsterSampleApplicationApp.OrderState.PENDING' | translate}}</option>
+                        <option value="WIP">{{'jhipsterSampleApplicationApp.OrderState.WIP' | translate}}</option>
+                        <option value="INTRANSIT">{{'jhipsterSampleApplicationApp.OrderState.INTRANSIT' | translate}}</option>
+                        <option value="DELIVERED">{{'jhipsterSampleApplicationApp.OrderState.DELIVERED' | translate}}</option>
+                        <option value="CANCELLED">{{'jhipsterSampleApplicationApp.OrderState.CANCELLED' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.orderHistory.date" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" [(ngModel)]="date"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.orderHistory.by" for="field_by">By</label>
+                    <select class="form-control" id="field_by" name="by" [(ngModel)]="orderHistory.byId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="aMSAUserOption.id" *ngFor="let aMSAUserOption of amsausers; trackBy: trackAMSAUserById">{{aMSAUserOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.orderHistory.serviceOrder" for="field_serviceOrder">Service Order</label>
+                    <select class="form-control" id="field_serviceOrder" name="serviceOrder" [(ngModel)]="orderHistory.serviceOrderId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceOrderOption.id" *ngFor="let serviceOrderOption of serviceorders; trackBy: trackServiceOrderById">{{serviceOrderOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.orderHistory.taskOrder" for="field_taskOrder">Task Order</label>
+                    <select class="form-control" id="field_taskOrder" name="taskOrder" [(ngModel)]="orderHistory.taskOrderId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="taskOrderOption.id" *ngFor="let taskOrderOption of taskorders; trackBy: trackTaskOrderById">{{taskOrderOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

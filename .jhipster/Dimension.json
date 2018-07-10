@@ -1,0 +1,32 @@
+{
+    "name": "Dimension",
+    "fields": [
+        {
+            "fieldName": "us",
+            "fieldType": "UnitSystem",
+            "fieldValues": "MM,INCH"
+        },
+        {
+            "fieldName": "x",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "y",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "z",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180710124658",
+    "entityTableName": "dimension",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,48 @@
+{
+    "name": "ServiceRequestClass",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "showOriginalCAD",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "showDesignSpaceCAD",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "showNonDesignSpaceCAD",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "showTechSpec",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "showMaterial",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "showDimensions",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "showPhoto",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180710124659",
+    "javadoc": "Service Class is\n- Nuovo Prodotto\n- Piccola Serie\n- Parti di Ricambio",
+    "entityTableName": "service_request_class",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

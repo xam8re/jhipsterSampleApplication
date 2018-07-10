@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-task-offer-heading" jhiTranslate="jhipsterSampleApplicationApp.taskOffer.home.createOrEditLabel">Create or edit a Task Offer</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!taskOffer.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="taskOffer.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.taskOffer.prize" for="field_prize">Prize</label>
+                    <input type="number" class="form-control" name="prize" id="field_prize"
+                        [(ngModel)]="taskOffer.prize" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.taskOffer.state" for="field_state">State</label>
+                    <select class="form-control" name="state" [(ngModel)]="taskOffer.state" id="field_state" >
+                        <option value="PENDING">{{'jhipsterSampleApplicationApp.OfferState.PENDING' | translate}}</option>
+                        <option value="COMPLETED">{{'jhipsterSampleApplicationApp.OfferState.COMPLETED' | translate}}</option>
+                        <option value="SUBMITTED">{{'jhipsterSampleApplicationApp.OfferState.SUBMITTED' | translate}}</option>
+                        <option value="APPROVED">{{'jhipsterSampleApplicationApp.OfferState.APPROVED' | translate}}</option>
+                        <option value="REJECTED">{{'jhipsterSampleApplicationApp.OfferState.REJECTED' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.taskOffer.period" for="field_period">Period</label>
+                    <div class="d-flex">
+                        <input id="field_period" type="datetime-local" class="form-control" name="period" [(ngModel)]="period"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.taskOffer.taskRequest" for="field_taskRequest">Task Request</label>
+                    <select class="form-control" id="field_taskRequest" name="taskRequest" [(ngModel)]="taskOffer.taskRequestId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="taskRequestOption.id" *ngFor="let taskRequestOption of taskrequests; trackBy: trackTaskRequestById">{{taskRequestOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.taskOffer.supplier" for="field_supplier">Supplier</label>
+                    <select class="form-control" id="field_supplier" name="supplier" [(ngModel)]="taskOffer.supplierId"  required>
+                        <option *ngIf="!editForm.value.supplier" [ngValue]="null" selected></option>
+                        <option [ngValue]="aMSAUserOption.id" *ngFor="let aMSAUserOption of amsausers; trackBy: trackAMSAUserById">{{aMSAUserOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.supplier?.dirty && editForm.controls.supplier?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.supplier?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.taskOffer.serviceOffer" for="field_serviceOffer">Service Offer</label>
+                    <select class="form-control" id="field_serviceOffer" name="serviceOffer" [(ngModel)]="taskOffer.serviceOfferId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceOfferOption.id" *ngFor="let serviceOfferOption of serviceoffers; trackBy: trackServiceOfferById">{{serviceOfferOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

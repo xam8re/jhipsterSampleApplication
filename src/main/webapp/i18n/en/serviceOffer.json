@@ -1,0 +1,28 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "serviceOffer" : {
+            "home": {
+                "title": "Service Offers",
+                "createLabel": "Create a new Service Offer",
+                "createOrEditLabel": "Create or edit a Service Offer",
+                "search": "Search for Service Offer"
+            },
+            "created": "A new Service Offer is created with identifier {{ param }}",
+            "updated": "A Service Offer is updated with identifier {{ param }}",
+            "deleted": "A Service Offer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Service Offer {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Offer"
+            },
+            "prize": "Prize",
+            "state": "State",
+            "period": "Period",
+            "serviceRequest": "Service Request",
+            "chosenoffer": "Chosenoffer",
+            "amsaUser": "Amsa User"
+        }
+    }
+}

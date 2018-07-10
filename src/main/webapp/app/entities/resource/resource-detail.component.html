@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resource">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.resource.detail.title">Resource</span> {{resource.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.resource.accuracy">Accuracy</span></dt>
+                <dd>
+                    <span>{{resource.accuracy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.resource.portable" [ngbTooltip]="'jhipsterSampleApplicationApp.resource.help.portable' | translate">Portable</span></dt>
+                <dd>
+                    <span>{{resource.portable}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.resource.machineModel">Machine Model</span></dt>
+                <dd>
+                    <div *ngIf="resource.machineModelId">
+                        <a [routerLink]="['/machine-model', resource.machineModelId, 'view']">{{resource.machineModelId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.resource.workVolume">Work Volume</span></dt>
+                <dd>
+                    <div *ngIf="resource.workVolumeId">
+                        <a [routerLink]="['/dimension', resource.workVolumeId, 'view']">{{resource.workVolumeId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.resource.owner">Owner</span></dt>
+                <dd>
+                    <div *ngIf="resource.ownerId">
+                        <a [routerLink]="['/amsa-user', resource.ownerId, 'view']">{{resource.ownerId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/resource', resource.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

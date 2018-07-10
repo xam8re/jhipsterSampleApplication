@@ -1,0 +1,28 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "taskOffer" : {
+            "home": {
+                "title": "Task Offers",
+                "createLabel": "Create a new Task Offer",
+                "createOrEditLabel": "Create or edit a Task Offer",
+                "search": "Search for Task Offer"
+            },
+            "created": "A new Task Offer is created with identifier {{ param }}",
+            "updated": "A Task Offer is updated with identifier {{ param }}",
+            "deleted": "A Task Offer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Task Offer {{ id }}?"
+            },
+            "detail": {
+                "title": "Task Offer"
+            },
+            "prize": "Prize",
+            "state": "State",
+            "period": "Period",
+            "taskRequest": "Task Request",
+            "supplier": "Supplier",
+            "serviceOffer": "Service Offer"
+        }
+    }
+}

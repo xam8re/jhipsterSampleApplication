@@ -1,0 +1,23 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "manufacturer" : {
+            "home": {
+                "title": "Manufacturers",
+                "createLabel": "Genera un nuovo Manufacturer",
+                "createOrEditLabel": "Genera o modifica un Manufacturer",
+                "search": "Cerca Manufacturer"
+            },
+            "created": "&Egrave; stato generato un nuovo Manufacturer con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Manufacturer identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Manufacturer con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Manufacturer {{ id }}?"
+            },
+            "detail": {
+                "title": "Manufacturer"
+            },
+            "name": "Name"
+        }
+    }
+}

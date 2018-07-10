@@ -1,0 +1,12 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "OfferState" : {
+            "null": "",
+            "PENDING": "PENDING",
+            "COMPLETED": "COMPLETED",
+            "SUBMITTED": "SUBMITTED",
+            "APPROVED": "APPROVED",
+            "REJECTED": "REJECTED"
+        }
+    }
+}

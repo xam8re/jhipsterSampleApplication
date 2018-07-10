@@ -1,0 +1,30 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "taskRequest" : {
+            "home": {
+                "title": "TaskRequests",
+                "createLabel": "Genera un nuovo Task Request",
+                "createOrEditLabel": "Genera o modifica un Task Request",
+                "search": "Cerca Task Request"
+            },
+            "created": "&Egrave; stato generato un nuovo Task Request con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Task Request identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Task Request con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Task Request {{ id }}?"
+            },
+            "detail": {
+                "title": "Task Request"
+            },
+            "title": "Title",
+            "description": "Description",
+            "period": "Period",
+            "serviceRequest": "Service Request",
+            "technology": "Technology",
+            "material": "Material",
+            "volume": "Volume",
+            "offer": "Offer"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "name": "TaskOffer",
+    "fields": [
+        {
+            "fieldName": "prize",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "OfferState",
+            "fieldValues": "PENDING,COMPLETED,SUBMITTED,APPROVED,REJECTED"
+        },
+        {
+            "fieldName": "period",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "taskRequest",
+            "otherEntityName": "taskRequest",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "supplier",
+            "otherEntityName": "aMSAUser",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "serviceOffer",
+            "otherEntityName": "serviceOffer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180710124702",
+    "entityTableName": "task_offer",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

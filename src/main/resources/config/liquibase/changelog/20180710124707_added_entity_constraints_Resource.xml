@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Resource.
+    -->
+    <changeSet id="20180710124707-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="machine_model_id"
+                                 baseTableName="resource"
+                                 constraintName="fk_resource_machine_model_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="machine_model"/>
+
+        <addForeignKeyConstraint baseColumnNames="work_volume_id"
+                                 baseTableName="resource"
+                                 constraintName="fk_resource_work_volume_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dimension"/>
+
+        <addForeignKeyConstraint baseColumnNames="owner_id"
+                                 baseTableName="resource"
+                                 constraintName="fk_resource_owner_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="amsa_user"/>
+
+    </changeSet>
+</databaseChangeLog>

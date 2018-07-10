@@ -1,0 +1,25 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "technology" : {
+            "home": {
+                "title": "Technologies",
+                "createLabel": "Genera un nuovo Technology",
+                "createOrEditLabel": "Genera o modifica un Technology",
+                "search": "Cerca Technology"
+            },
+            "created": "&Egrave; stato generato un nuovo Technology con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Technology identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Technology con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Technology {{ id }}?"
+            },
+            "detail": {
+                "title": "Technology"
+            },
+            "name": "Name",
+            "technologyClass": "Technology Class",
+            "machineModel": "Machine Model"
+        }
+    }
+}

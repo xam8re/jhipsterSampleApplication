@@ -1,0 +1,27 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "orderHistory" : {
+            "home": {
+                "title": "OrderHistories",
+                "createLabel": "Genera un nuovo Order History",
+                "createOrEditLabel": "Genera o modifica un Order History",
+                "search": "Cerca Order History"
+            },
+            "created": "&Egrave; stato generato un nuovo Order History con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Order History identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Order History con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Order History {{ id }}?"
+            },
+            "detail": {
+                "title": "Order History"
+            },
+            "state": "State",
+            "date": "Date",
+            "by": "By",
+            "serviceOrder": "Service Order",
+            "taskOrder": "Task Order"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "serviceOffer" : {
+            "home": {
+                "title": "ServiceOffers",
+                "createLabel": "Genera un nuovo Service Offer",
+                "createOrEditLabel": "Genera o modifica un Service Offer",
+                "search": "Cerca Service Offer"
+            },
+            "created": "&Egrave; stato generato un nuovo Service Offer con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Service Offer identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Service Offer con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Service Offer {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Offer"
+            },
+            "prize": "Prize",
+            "state": "State",
+            "period": "Period",
+            "serviceRequest": "Service Request",
+            "chosenoffer": "Chosenoffer",
+            "amsaUser": "Amsa User"
+        }
+    }
+}

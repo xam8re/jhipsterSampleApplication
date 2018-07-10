@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-service-offer-heading" jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.home.createOrEditLabel">Create or edit a Service Offer</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!serviceOffer.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="serviceOffer.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.prize" for="field_prize">Prize</label>
+                    <input type="number" class="form-control" name="prize" id="field_prize"
+                        [(ngModel)]="serviceOffer.prize" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.state" for="field_state">State</label>
+                    <select class="form-control" name="state" [(ngModel)]="serviceOffer.state" id="field_state" >
+                        <option value="PENDING">{{'jhipsterSampleApplicationApp.OfferState.PENDING' | translate}}</option>
+                        <option value="COMPLETED">{{'jhipsterSampleApplicationApp.OfferState.COMPLETED' | translate}}</option>
+                        <option value="SUBMITTED">{{'jhipsterSampleApplicationApp.OfferState.SUBMITTED' | translate}}</option>
+                        <option value="APPROVED">{{'jhipsterSampleApplicationApp.OfferState.APPROVED' | translate}}</option>
+                        <option value="REJECTED">{{'jhipsterSampleApplicationApp.OfferState.REJECTED' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.period" for="field_period">Period</label>
+                    <div class="d-flex">
+                        <input id="field_period" type="datetime-local" class="form-control" name="period" [(ngModel)]="period"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.serviceRequest" for="field_serviceRequest">Service Request</label>
+                    <select class="form-control" id="field_serviceRequest" name="serviceRequest" [(ngModel)]="serviceOffer.serviceRequestId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceRequestOption.id" *ngFor="let serviceRequestOption of servicerequests; trackBy: trackServiceRequestById">{{serviceRequestOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.amsaUser" for="field_amsaUser">Amsa User</label>
+                    <select class="form-control" id="field_amsaUser" name="amsaUser" [(ngModel)]="serviceOffer.amsaUserId"  required>
+                        <option *ngIf="!editForm.value.amsaUser" [ngValue]="null" selected></option>
+                        <option [ngValue]="aMSAUserOption.id" *ngFor="let aMSAUserOption of amsausers; trackBy: trackAMSAUserById">{{aMSAUserOption.firstName}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.amsaUser?.dirty && editForm.controls.amsaUser?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.amsaUser?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

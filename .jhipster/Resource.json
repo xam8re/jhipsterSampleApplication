@@ -1,0 +1,51 @@
+{
+    "name": "Resource",
+    "fields": [
+        {
+            "fieldName": "accuracy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "portable",
+            "javadoc": "equivalente a scanning on site",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "material",
+            "otherEntityName": "material",
+            "otherEntityRelationshipName": "resource"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "machineModel",
+            "otherEntityName": "machineModel",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "workVolume",
+            "otherEntityName": "dimension",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "owner",
+            "otherEntityName": "aMSAUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180710124707",
+    "entityTableName": "resource",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

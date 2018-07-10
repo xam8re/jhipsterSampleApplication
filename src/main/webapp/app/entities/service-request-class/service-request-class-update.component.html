@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-service-request-class-heading" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.home.createOrEditLabel">Create or edit a Service Request Class</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!serviceRequestClass.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="serviceRequestClass.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="serviceRequestClass.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showOriginalCAD" for="field_showOriginalCAD">Show Original CAD</label>
+                    <input type="checkbox" class="form-control" name="showOriginalCAD" id="field_showOriginalCAD"
+                        [(ngModel)]="serviceRequestClass.showOriginalCAD" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showDesignSpaceCAD" for="field_showDesignSpaceCAD">Show Design Space CAD</label>
+                    <input type="checkbox" class="form-control" name="showDesignSpaceCAD" id="field_showDesignSpaceCAD"
+                        [(ngModel)]="serviceRequestClass.showDesignSpaceCAD" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showNonDesignSpaceCAD" for="field_showNonDesignSpaceCAD">Show Non Design Space CAD</label>
+                    <input type="checkbox" class="form-control" name="showNonDesignSpaceCAD" id="field_showNonDesignSpaceCAD"
+                        [(ngModel)]="serviceRequestClass.showNonDesignSpaceCAD" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showTechSpec" for="field_showTechSpec">Show Tech Spec</label>
+                    <input type="checkbox" class="form-control" name="showTechSpec" id="field_showTechSpec"
+                        [(ngModel)]="serviceRequestClass.showTechSpec" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showMaterial" for="field_showMaterial">Show Material</label>
+                    <input type="checkbox" class="form-control" name="showMaterial" id="field_showMaterial"
+                        [(ngModel)]="serviceRequestClass.showMaterial" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showDimensions" for="field_showDimensions">Show Dimensions</label>
+                    <input type="checkbox" class="form-control" name="showDimensions" id="field_showDimensions"
+                        [(ngModel)]="serviceRequestClass.showDimensions" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showPhoto" for="field_showPhoto">Show Photo</label>
+                    <input type="checkbox" class="form-control" name="showPhoto" id="field_showPhoto"
+                        [(ngModel)]="serviceRequestClass.showPhoto" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

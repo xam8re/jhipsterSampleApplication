@@ -1,0 +1,43 @@
+{
+    "name": "OrderHistory",
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "OrderState",
+            "fieldValues": "PENDING,WIP,INTRANSIT,DELIVERED,CANCELLED"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "by",
+            "otherEntityName": "aMSAUser",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "serviceOrder",
+            "otherEntityName": "serviceOrder",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "taskOrder",
+            "otherEntityName": "taskOrder",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180710124709",
+    "entityTableName": "order_history",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

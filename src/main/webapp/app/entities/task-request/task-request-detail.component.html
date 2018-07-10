@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="taskRequest">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.taskRequest.detail.title">Task Request</span> {{taskRequest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskRequest.title">Title</span></dt>
+                <dd>
+                    <span>{{taskRequest.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskRequest.description">Description</span></dt>
+                <dd>
+                    <span>{{taskRequest.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskRequest.period">Period</span></dt>
+                <dd>
+                    <span>{{taskRequest.period}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskRequest.serviceRequest">Service Request</span></dt>
+                <dd>
+                    <div *ngIf="taskRequest.serviceRequestId">
+                        <a [routerLink]="['/service-request', taskRequest.serviceRequestId, 'view']">{{taskRequest.serviceRequestId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskRequest.technology">Technology</span></dt>
+                <dd>
+                    <div *ngIf="taskRequest.technologyId">
+                        <a [routerLink]="['/technology', taskRequest.technologyId, 'view']">{{taskRequest.technologyId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskRequest.material">Material</span></dt>
+                <dd>
+                    <div *ngIf="taskRequest.materialId">
+                        <a [routerLink]="['/material', taskRequest.materialId, 'view']">{{taskRequest.materialId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskRequest.volume">Volume</span></dt>
+                <dd>
+                    <div *ngIf="taskRequest.volumeId">
+                        <a [routerLink]="['/dimension', taskRequest.volumeId, 'view']">{{taskRequest.volumeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/task-request', taskRequest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
