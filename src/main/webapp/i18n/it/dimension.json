@@ -1,0 +1,26 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "dimension" : {
+            "home": {
+                "title": "Dimensions",
+                "createLabel": "Genera un nuovo Dimension",
+                "createOrEditLabel": "Genera o modifica un Dimension",
+                "search": "Cerca Dimension"
+            },
+            "created": "&Egrave; stato generato un nuovo Dimension con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Dimension identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Dimension con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Dimension {{ id }}?"
+            },
+            "detail": {
+                "title": "Dimension"
+            },
+            "us": "Us",
+            "x": "X",
+            "y": "Y",
+            "z": "Z"
+        }
+    }
+}

@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="taskOffer">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.taskOffer.detail.title">Task Offer</span> {{taskOffer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskOffer.prize">Prize</span></dt>
+                <dd>
+                    <span>{{taskOffer.prize}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskOffer.state">State</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterSampleApplicationApp.OfferState.' + taskOffer.state}}">{{taskOffer.state}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskOffer.period">Period</span></dt>
+                <dd>
+                    <span>{{taskOffer.period}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskOffer.taskRequest">Task Request</span></dt>
+                <dd>
+                    <div *ngIf="taskOffer.taskRequestId">
+                        <a [routerLink]="['/task-request', taskOffer.taskRequestId, 'view']">{{taskOffer.taskRequestId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskOffer.supplier">Supplier</span></dt>
+                <dd>
+                    <div *ngIf="taskOffer.supplierId">
+                        <a [routerLink]="['/amsa-user', taskOffer.supplierId, 'view']">{{taskOffer.supplierId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.taskOffer.serviceOffer">Service Offer</span></dt>
+                <dd>
+                    <div *ngIf="taskOffer.serviceOfferId">
+                        <a [routerLink]="['/service-offer', taskOffer.serviceOfferId, 'view']">{{taskOffer.serviceOfferId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/task-offer', taskOffer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceRequest">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequest.detail.title">Service Request</span> {{serviceRequest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequest.name">Name</span></dt>
+                <dd>
+                    <span>{{serviceRequest.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequest.period">Period</span></dt>
+                <dd>
+                    <span>{{serviceRequest.period}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequest.material">Material</span></dt>
+                <dd>
+                    <div *ngIf="serviceRequest.materialId">
+                        <a [routerLink]="['/material', serviceRequest.materialId, 'view']">{{serviceRequest.materialId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequest.volume">Volume</span></dt>
+                <dd>
+                    <div *ngIf="serviceRequest.volumeId">
+                        <a [routerLink]="['/dimension', serviceRequest.volumeId, 'view']">{{serviceRequest.volumeId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequest.srvclass">Srvclass</span></dt>
+                <dd>
+                    <div *ngIf="serviceRequest.srvclassId">
+                        <a [routerLink]="['/service-request-class', serviceRequest.srvclassId, 'view']">{{serviceRequest.srvclassId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequest.amsaUser">Amsa User</span></dt>
+                <dd>
+                    <div *ngIf="serviceRequest.amsaUserId">
+                        <a [routerLink]="['/amsa-user', serviceRequest.amsaUserId, 'view']">{{serviceRequest.amsaUserFirstName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequest.document">Document</span></dt>
+                <dd>
+                    <span *ngFor="let document of serviceRequest.documents; let last = last">
+                        <a [routerLink]="['/document', document?.id, 'view' ]">{{document.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-request', serviceRequest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

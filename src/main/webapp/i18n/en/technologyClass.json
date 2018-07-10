@@ -1,0 +1,26 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "technologyClass" : {
+            "home": {
+                "title": "Technology Classes",
+                "createLabel": "Create a new Technology Class",
+                "createOrEditLabel": "Create or edit a Technology Class",
+                "search": "Search for Technology Class"
+            },
+            "created": "A new Technology Class is created with identifier {{ param }}",
+            "updated": "A Technology Class is updated with identifier {{ param }}",
+            "deleted": "A Technology Class is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Technology Class {{ id }}?"
+            },
+            "detail": {
+                "title": "Technology Class"
+            },
+            "name": "Name",
+            "showAccuracy": "Show Accuracy",
+            "showPortable": "Show Portable",
+            "showMaterial": "Show Material"
+        }
+    }
+}

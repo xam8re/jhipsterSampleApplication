@@ -1,0 +1,30 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "serviceRequestClass" : {
+            "home": {
+                "title": "Service Request Classes",
+                "createLabel": "Create a new Service Request Class",
+                "createOrEditLabel": "Create or edit a Service Request Class",
+                "search": "Search for Service Request Class"
+            },
+            "created": "A new Service Request Class is created with identifier {{ param }}",
+            "updated": "A Service Request Class is updated with identifier {{ param }}",
+            "deleted": "A Service Request Class is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Service Request Class {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Request Class"
+            },
+            "name": "Name",
+            "showOriginalCAD": "Show Original CAD",
+            "showDesignSpaceCAD": "Show Design Space CAD",
+            "showNonDesignSpaceCAD": "Show Non Design Space CAD",
+            "showTechSpec": "Show Tech Spec",
+            "showMaterial": "Show Material",
+            "showDimensions": "Show Dimensions",
+            "showPhoto": "Show Photo"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "material" : {
+            "home": {
+                "title": "Materials",
+                "createLabel": "Genera un nuovo Material",
+                "createOrEditLabel": "Genera o modifica un Material",
+                "search": "Cerca Material"
+            },
+            "created": "&Egrave; stato generato un nuovo Material con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Material identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Material con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Material {{ id }}?"
+            },
+            "detail": {
+                "title": "Material"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "image": "Image",
+            "resource": "Resource"
+        }
+    }
+}

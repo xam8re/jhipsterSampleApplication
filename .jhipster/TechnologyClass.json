@@ -1,0 +1,34 @@
+{
+    "name": "TechnologyClass",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "showAccuracy",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "showPortable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "showMaterial",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180710124704",
+    "entityTableName": "technology_class",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

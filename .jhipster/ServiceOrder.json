@@ -1,0 +1,27 @@
+{
+    "name": "ServiceOrder",
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "OrderState",
+            "fieldValues": "PENDING,WIP,INTRANSIT,DELIVERED,CANCELLED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "orderHistory",
+            "otherEntityName": "orderHistory",
+            "otherEntityRelationshipName": "serviceOrder"
+        }
+    ],
+    "changelogDate": "20180710124710",
+    "entityTableName": "service_order",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

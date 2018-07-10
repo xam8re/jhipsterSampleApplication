@@ -1,0 +1,24 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "taskOrder" : {
+            "home": {
+                "title": "Task Orders",
+                "createLabel": "Create a new Task Order",
+                "createOrEditLabel": "Create or edit a Task Order",
+                "search": "Search for Task Order"
+            },
+            "created": "A new Task Order is created with identifier {{ param }}",
+            "updated": "A Task Order is updated with identifier {{ param }}",
+            "deleted": "A Task Order is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Task Order {{ id }}?"
+            },
+            "detail": {
+                "title": "Task Order"
+            },
+            "state": "State",
+            "orderHistory": "Order History"
+        }
+    }
+}

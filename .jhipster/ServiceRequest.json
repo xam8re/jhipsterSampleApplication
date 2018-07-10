@@ -1,0 +1,70 @@
+{
+    "name": "ServiceRequest",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "period",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "task",
+            "otherEntityName": "taskRequest",
+            "otherEntityRelationshipName": "serviceRequest"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "offer",
+            "otherEntityName": "serviceOffer",
+            "otherEntityRelationshipName": "serviceRequest"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "material",
+            "otherEntityName": "material",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "volume",
+            "otherEntityName": "dimension",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "srvclass",
+            "otherEntityName": "serviceRequestClass",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "amsaUser",
+            "otherEntityName": "aMSAUser",
+            "otherEntityField": "firstName"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "document",
+            "otherEntityName": "document",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20180710124700",
+    "javadoc": "Descrizione del servizio da parte dell'utente",
+    "entityTableName": "service_request",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

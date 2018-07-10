@@ -1,0 +1,24 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "taskOrder" : {
+            "home": {
+                "title": "TaskOrders",
+                "createLabel": "Genera un nuovo Task Order",
+                "createOrEditLabel": "Genera o modifica un Task Order",
+                "search": "Cerca Task Order"
+            },
+            "created": "&Egrave; stato generato un nuovo Task Order con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Task Order identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Task Order con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Task Order {{ id }}?"
+            },
+            "detail": {
+                "title": "Task Order"
+            },
+            "state": "State",
+            "orderHistory": "Order History"
+        }
+    }
+}

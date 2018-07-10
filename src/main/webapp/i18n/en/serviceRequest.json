@@ -1,0 +1,31 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "serviceRequest" : {
+            "home": {
+                "title": "Service Requests",
+                "createLabel": "Create a new Service Request",
+                "createOrEditLabel": "Create or edit a Service Request",
+                "search": "Search for Service Request"
+            },
+            "created": "A new Service Request is created with identifier {{ param }}",
+            "updated": "A Service Request is updated with identifier {{ param }}",
+            "deleted": "A Service Request is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Service Request {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Request"
+            },
+            "name": "Name",
+            "period": "Period",
+            "task": "Task",
+            "offer": "Offer",
+            "material": "Material",
+            "volume": "Volume",
+            "srvclass": "Srvclass",
+            "amsaUser": "Amsa User",
+            "document": "Document"
+        }
+    }
+}

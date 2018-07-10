@@ -1,0 +1,26 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "technologyClass" : {
+            "home": {
+                "title": "TechnologyClasses",
+                "createLabel": "Genera un nuovo Technology Class",
+                "createOrEditLabel": "Genera o modifica un Technology Class",
+                "search": "Cerca Technology Class"
+            },
+            "created": "&Egrave; stato generato un nuovo Technology Class con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Technology Class identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Technology Class con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Technology Class {{ id }}?"
+            },
+            "detail": {
+                "title": "Technology Class"
+            },
+            "name": "Name",
+            "showAccuracy": "Show Accuracy",
+            "showPortable": "Show Portable",
+            "showMaterial": "Show Material"
+        }
+    }
+}

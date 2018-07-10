@@ -1,0 +1,24 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "serviceOrder" : {
+            "home": {
+                "title": "ServiceOrders",
+                "createLabel": "Genera un nuovo Service Order",
+                "createOrEditLabel": "Genera o modifica un Service Order",
+                "search": "Cerca Service Order"
+            },
+            "created": "&Egrave; stato generato un nuovo Service Order con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Service Order identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Service Order con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Service Order {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Order"
+            },
+            "state": "State",
+            "orderHistory": "Order History"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="aMSAUser">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.detail.title">AMSA User</span> {{aMSAUser.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{aMSAUser.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{aMSAUser.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.email">Email</span></dt>
+                <dd>
+                    <span>{{aMSAUser.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{aMSAUser.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.company">Company</span></dt>
+                <dd>
+                    <span>{{aMSAUser.company}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.streetAddress">Street Address</span></dt>
+                <dd>
+                    <span>{{aMSAUser.streetAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{aMSAUser.postalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.city">City</span></dt>
+                <dd>
+                    <span>{{aMSAUser.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.stateProvince">State Province</span></dt>
+                <dd>
+                    <span>{{aMSAUser.stateProvince}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.country">Country</span></dt>
+                <dd>
+                    <span>{{aMSAUser.country}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.userType">User Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterSampleApplicationApp.AMSAuserType.' + aMSAUser.userType}}">{{aMSAUser.userType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.jhuser">Jhuser</span></dt>
+                <dd>
+                    {{aMSAUser.jhuserId}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/amsa-user', aMSAUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.home.title">Service Request Classes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-request-class" [routerLink]="['/service-request-class/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.home.createLabel">
+            Create new Service Request Class
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jhipsterSampleApplicationApp.serviceRequestClass.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="serviceRequestClasses">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="name"><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="showOriginalCAD"><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showOriginalCAD">Show Original CAD</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="showDesignSpaceCAD"><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showDesignSpaceCAD">Show Design Space CAD</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="showNonDesignSpaceCAD"><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showNonDesignSpaceCAD">Show Non Design Space CAD</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="showTechSpec"><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showTechSpec">Show Tech Spec</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="showMaterial"><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showMaterial">Show Material</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="showDimensions"><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showDimensions">Show Dimensions</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="showPhoto"><span jhiTranslate="jhipsterSampleApplicationApp.serviceRequestClass.showPhoto">Show Photo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceRequestClass of serviceRequestClasses ;trackBy: trackId">
+                <td><a [routerLink]="['/service-request-class', serviceRequestClass.id, 'view' ]">{{serviceRequestClass.id}}</a></td>
+                <td>{{serviceRequestClass.name}}</td>
+                <td>{{serviceRequestClass.showOriginalCAD}}</td>
+                <td>{{serviceRequestClass.showDesignSpaceCAD}}</td>
+                <td>{{serviceRequestClass.showNonDesignSpaceCAD}}</td>
+                <td>{{serviceRequestClass.showTechSpec}}</td>
+                <td>{{serviceRequestClass.showMaterial}}</td>
+                <td>{{serviceRequestClass.showDimensions}}</td>
+                <td>{{serviceRequestClass.showPhoto}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/service-request-class', serviceRequestClass.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-request-class', serviceRequestClass.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'service-request-class/'+ serviceRequestClass.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="serviceRequestClasses && serviceRequestClasses.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "aMSAUser" : {
+            "home": {
+                "title": "AMSA Users",
+                "createLabel": "Create a new AMSA User",
+                "createOrEditLabel": "Create or edit a AMSA User",
+                "search": "Search for AMSA User"
+            },
+            "created": "A new AMSA User is created with identifier {{ param }}",
+            "updated": "A AMSA User is updated with identifier {{ param }}",
+            "deleted": "A AMSA User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AMSA User {{ id }}?"
+            },
+            "detail": {
+                "title": "AMSA User"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phoneNumber": "Phone Number",
+            "company": "Company",
+            "streetAddress": "Street Address",
+            "postalCode": "Postal Code",
+            "city": "City",
+            "stateProvince": "State Province",
+            "country": "Country",
+            "userType": "User Type",
+            "jhuser": "Jhuser"
+        }
+    }
+}

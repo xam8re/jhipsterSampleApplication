@@ -1,0 +1,12 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "OrderState" : {
+            "null": "",
+            "PENDING": "PENDING",
+            "WIP": "WIP",
+            "INTRANSIT": "INTRANSIT",
+            "DELIVERED": "DELIVERED",
+            "CANCELLED": "CANCELLED"
+        }
+    }
+}

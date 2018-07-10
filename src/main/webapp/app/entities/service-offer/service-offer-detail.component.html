@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceOffer">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.detail.title">Service Offer</span> {{serviceOffer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.prize">Prize</span></dt>
+                <dd>
+                    <span>{{serviceOffer.prize}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.state">State</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterSampleApplicationApp.OfferState.' + serviceOffer.state}}">{{serviceOffer.state}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.period">Period</span></dt>
+                <dd>
+                    <span>{{serviceOffer.period}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.serviceRequest">Service Request</span></dt>
+                <dd>
+                    <div *ngIf="serviceOffer.serviceRequestId">
+                        <a [routerLink]="['/service-request', serviceOffer.serviceRequestId, 'view']">{{serviceOffer.serviceRequestId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.serviceOffer.amsaUser">Amsa User</span></dt>
+                <dd>
+                    <div *ngIf="serviceOffer.amsaUserId">
+                        <a [routerLink]="['/amsa-user', serviceOffer.amsaUserId, 'view']">{{serviceOffer.amsaUserFirstName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-offer', serviceOffer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

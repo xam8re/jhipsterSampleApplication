@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TaskOffer.
+    -->
+    <changeSet id="20180710124702-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="task_request_id"
+                                 baseTableName="task_offer"
+                                 constraintName="fk_task_offer_task_request_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="task_request"/>
+
+        <addForeignKeyConstraint baseColumnNames="supplier_id"
+                                 baseTableName="task_offer"
+                                 constraintName="fk_task_offer_supplier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="amsa_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_offer_id"
+                                 baseTableName="task_offer"
+                                 constraintName="fk_task_offer_service_offer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service_offer"/>
+
+    </changeSet>
+</databaseChangeLog>

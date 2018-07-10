@@ -1,0 +1,101 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.home.title">AMSA Users</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-amsa-user" [routerLink]="['/amsa-user/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.home.createLabel">
+            Create new AMSA User
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jhipsterSampleApplicationApp.aMSAUser.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="aMSAUsers">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.firstName">First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.lastName">Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="phoneNumber"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.phoneNumber">Phone Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="company"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.company">Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="streetAddress"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.streetAddress">Street Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="postalCode"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.postalCode">Postal Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="city"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.city">City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stateProvince"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.stateProvince">State Province</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="country"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.country">Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="userType"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.userType">User Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="jhuserId"><span jhiTranslate="jhipsterSampleApplicationApp.aMSAUser.jhuser">Jhuser</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let aMSAUser of aMSAUsers ;trackBy: trackId">
+                <td><a [routerLink]="['/amsa-user', aMSAUser.id, 'view' ]">{{aMSAUser.id}}</a></td>
+                <td>{{aMSAUser.firstName}}</td>
+                <td>{{aMSAUser.lastName}}</td>
+                <td>{{aMSAUser.email}}</td>
+                <td>{{aMSAUser.phoneNumber}}</td>
+                <td>{{aMSAUser.company}}</td>
+                <td>{{aMSAUser.streetAddress}}</td>
+                <td>{{aMSAUser.postalCode}}</td>
+                <td>{{aMSAUser.city}}</td>
+                <td>{{aMSAUser.stateProvince}}</td>
+                <td>{{aMSAUser.country}}</td>
+                <td jhiTranslate="{{'jhipsterSampleApplicationApp.AMSAuserType.' + aMSAUser.userType}}">{{aMSAUser.userType}}</td>
+                <td>
+                    {{aMSAUser.jhuserId}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/amsa-user', aMSAUser.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/amsa-user', aMSAUser.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'amsa-user/'+ aMSAUser.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="aMSAUsers && aMSAUsers.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>
